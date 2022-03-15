@@ -1,0 +1,37 @@
+{
+    "name": "forms-lang",
+    "displayName": "Forms Lang",
+    "description": "Syntax highlighting for Forms",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.65.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "forms",
+                "aliases": [
+                    "Forms",
+                    "forms"
+                ],
+                "extensions": [
+                    ".frm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "forms",
+                "scopeName": "source.forms",
+                "path": "./syntaxes/forms.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0"
+    }
+}

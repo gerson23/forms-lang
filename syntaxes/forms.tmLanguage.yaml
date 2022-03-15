@@ -1,0 +1,41 @@
+$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+name: Forms
+patterns:
+  - include: '#strings'
+  - include: '#comments'
+  - include: '#keywords'
+  - include: '#storages'
+  - include: "#macros"
+repository:
+  comments:
+    name: comment.character.forms
+    match: \.\..*
+  keywords:
+    patterns:
+      - name: keyword.control.forms
+        match: \b(if|while|for|return|loop|\?)\b
+      - name: keyword.other.forms
+        match: ^\.[a-z]+\b
+      - name: markup.bold.forms
+        match: \b[A-Z]+\$
+  strings:
+    name: string.quoted.double.forms
+    begin: '"'
+    end: '"'
+    patterns:
+      - name: constant.character.escape.forms
+        match: \\.
+  macros:
+    patterns:
+      - name: constant.numeric.forms
+        match: \b[A-Z_]+\b
+  storages:
+    patterns:
+      - name: storage.type.forms
+        match: \b(enum|int|str)\b
+      - match: ^\.expr ([a-zA-Z0-9_]+).*$
+        capture:
+          1:
+            name: constant.character.escape.forms
+scopeName: source.forms
+
